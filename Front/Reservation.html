@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/Reservation.js"></script>
+    <title>Reservation</title>
+    <link rel="stylesheet" href="css/Grand/semantic.min.css">
+    <script src="js/semantic.min.js"></script>
+    <style type="text/css">
+        .full {
+            min-height: 80%;
+            background-image: url('img/dos.jpg');
+            background-size: cover;
+        }
+
+        .pheader.h1.ui.header {
+            margin-top: 20cm;
+            margin-bottom: 0em;
+            font-size: 10em;
+            font-weight: normal;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ui black inverted fixed menu">
+        <a class="item" href="index.html">
+            <i class="home icon"></i>
+            Home
+        </a>
+        <a class="item" href="category.html">
+            Categories
+        </a>
+        <a class="item" href="Cabins.html">
+            Cabins
+        </a>
+        <a class="item" href="client.html">
+            Clients
+        </a>
+        <a class="item" href="message.html">
+            Messages
+        </a>
+        <a class="item" href="Reservation.html">
+            Reservations
+        </a>
+        <a class="item" href="reports.html">
+            Reports
+        </a>
+    </div>
+
+    <div class="full">
+
+        <br><br><br><br>
+    </div>
+    <div class="ui divider"></div>
+    <div class="ui two column left aligned divided very relaxed stackable grid container">
+        <div class="row">
+            <div class="column">
+                <h2>Reservations registration</h2>
+                <div class="ui form">
+                    <div class="field">
+                        <label> When do you start? </label>
+                        <label for="startDate"></label>
+                        <input type="date" id="startDate">
+                    </div>
+                    <div class="field">
+                        <label> When do you leave ?</label>
+                        <label for="devolutionDate"></label>
+                        <input type="date" id="devolutionDate">
+                    </div>
+                    <div class="field">
+                      <label>Reservation status</label>
+                      <select id="status" >
+                        <option> Select one </option>
+                        <option> Completed </option>
+                        <option> Cancelled </option>
+                    </select>
+                    </div>
+                    
+                    <div class="field">
+                        <label for="client">Client</label>
+                        <select class="ui dropdown" id="select-client"></select>
+                        <script type="text/javascript">
+                         window.onload = autoStartClientRel();
+                        </script>
+                    </div>
+                    <div class="field">
+                        <label for="cabin">Cabin</label>
+                        <select class="ui dropdown" id="select-cabin"></select>
+                        <script type="text/javascript">
+                            window.onload = autoCallCabin();
+                        </script>
+                    </div>
+                    <button onclick="addReservation()" class="ui orange button" >Save Reservations</button>
+                    <button onclick="listReservations()" class="ui black button" >Search Reservations</button>
+                </div>
+            </div>
+            <div class="column">
+                <h2>Reservations report</h2>
+                <table class="ui celled table">
+                    <div id="myReservsList"></div>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="ui grid container">
+        <div class="row">
+
+        </div>
+    </div>
+    <script>
+        $('select.dropdown')
+            .dropdown()
+            ;
+    </script>
+</body>
+
+</html>

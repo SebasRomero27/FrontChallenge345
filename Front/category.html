@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/categories.js"></script>
+    <title>Category</title>
+    <link rel="stylesheet" href="css/Grand/semantic.min.css">
+    <style type="text/css">
+        .full {
+            min-height: 80%;
+            background-image: url('img/dos.jpg');
+            background-size: cover;
+        }
+
+        .pheader.h1.ui.header {
+            margin-top: 20cm;
+            margin-bottom: 0em;
+            font-size: 10em;
+            font-weight: normal;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ui black inverted fixed menu">
+        <a class="item" href="index.html">
+            <i class="home icon"></i>
+            Home
+        </a>
+        <a class="item" href="Cabins.html">
+            Cabins
+        </a>
+        <a class="item" href="client.html">
+            Clients
+        </a>
+        <a class="item" href="message.html">
+            Messages
+        </a>
+        <a class="item" href="Reservation.html">
+            Reservations
+        </a>
+        <a class="item" href="reports.html">
+            Reports
+        </a>
+    </div>
+
+    <div class="full">
+
+        <br><br><br><br>
+    </div>
+    <div class="ui divider"></div>
+    <div class="ui two column left aligned divided very relaxed stackable grid container">
+        <div class="row">
+            <div class="column">
+                <h2>Categories registration</h2>
+                <div class="ui form">
+                    <div class="field">
+                        <div class="ui search">
+                            <label for="name">Name</label>
+                            <input type="text" id="Cname" placeholder="name">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="description">Description</label>
+                        <input type="text" id="Cdescription" placeholder="description">
+                    </div> 
+                    <button onclick="getCategoriesInformation()" class="ui black button" > Search Categories</button>
+                    <button onclick="saveCategoriesInformation()" class="ui orange button" >Save Categories </button>
+                </div>
+            </div>
+            <div class="column">
+                <h2>Categories report</h2>
+                <div id="Table1"></div>
+            </div>
+        </div>
+        <div class="row">
+
+        </div>
+    </div>
+</body>
+
+</html>
